@@ -1,4 +1,5 @@
-<?php include_once "../server/user.php"?>
+<?php include_once "../server/user.php";
+session_start();?>
 <!doctype html>
 <html lang="en">
 <head>

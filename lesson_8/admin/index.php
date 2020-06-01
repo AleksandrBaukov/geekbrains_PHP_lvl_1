@@ -1,4 +1,6 @@
-<?php include_once "../server/functions.php"; ?>
+<?php include_once "../server/functions.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +12,9 @@
 <div id="container">
     <?php
     if(!($_SESSION['login'] == 'admin')) {
-        print_r($_SESSION['login']) ;
+    echo "Вы не вошли или вы не Админ!";}
+    else{
+//        print_r($_SESSION['login']) ;
     ?>
             <div class="menu">
                     <a href="../public/index.php" class="buy-btn admin-btn"><span>Сайт</span></a>
@@ -38,8 +42,6 @@
                 <?
             }
         }
-        }else{
-            echo "Вы не вошли или вы не Админ!";
         }
         ?>
     </div>

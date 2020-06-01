@@ -1,4 +1,4 @@
-<?php include_once "../server/reviews-core.php";
+<?php include_once "../server/reviewsCore.php";
 session_start();
 ?>
 

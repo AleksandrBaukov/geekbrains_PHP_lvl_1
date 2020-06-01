@@ -15,6 +15,7 @@ function addProduct(id) {
 }
 
 function delProduct(id) {
+    alert("chto to ne tak")
     $.ajax({
         type: 'POST',
         url: '../public/cart.php',

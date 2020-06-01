@@ -40,10 +40,10 @@
         </div>
     </header>
     <section class="order">
-        <h1>Here you can complete your order</h1>
-        <?php
-        include_once "../server/order-core.php";
-        ?>
+        <h1 class="order-title">Here you can complete your order</h1>
+            <?php
+            include_once "../server/orderCore.php";
+            ?>
     </section>
     <? include "templates/footer.php"?>
 </div>
