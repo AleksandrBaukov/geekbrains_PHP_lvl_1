@@ -5,7 +5,8 @@ include_once "../server/functions.php";
 
 if(isset($_SESSION['login'])){
     $user = $_SESSION['login'];
-}
+} else $user = "new user";
+
 if(isset($_POST['id'])){
     $id = (int)($_POST['id']);
 

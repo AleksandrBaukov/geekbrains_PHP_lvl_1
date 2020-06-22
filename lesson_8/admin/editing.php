@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="../public/css/style.css" type="text/css" media="all">
 </head>
 <body>
-<div id="container">
+<div class="container">
             <div class="menu">
                     <a href="index.php" class="buy-btn admin-btn"><span>Главная</span></a>
                     <a href="adding.php" class="buy-btn admin-btn"><span>Добавить товар</span></a>
+                    <a href="orders.php" class="buy-btn admin-btn"><span>Заказы</span></a>
             </div>
     <div class="content">
         <form method="post" enctype="multipart/form-data">

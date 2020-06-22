@@ -166,4 +166,72 @@ function delete($connect, $id, $table){
 
     return mysqli_affected_rows($connect);
 }
-?>
+
+function createOrder($connect, $name, $id, $quantity){
+    $t = "INSERT INTO orders (clientFio, idGoods, quantity) VALUES ('%s', '%d', '%d')";
+
+    $sql = sprintf($t, $name, $id, $quantity);
+
+    $res = mysqli_query($connect, $sql);
+
+    if(!$res){
+        die(mysqli_error($connect));
+    }
+}
+function newClient($connect, $user, $name, $phone, $email, $address, $pay, $delivery, $comment){
+    $t = "INSERT INTO clients (user, fio, phone, email, address, pay, delivery, comment) VALUES ('%s', '%s', '%s', '%s', '%s', '%s', '%s', '%s')";
+
+    $sql = sprintf($t, $user, $name, $phone, $email, $address, $pay, $delivery, $comment);
+
+    $res = mysqli_query($connect, $sql);
+
+    if(!$res){
+        die(mysqli_error($connect));
+    }
+}
+
+function deleteFromCart($connect, $id){
+    $sql= "DELETE FROM cart WHERE `id_good`=$id";
+    $res = mysqli_query($connect, $sql);
+    if(!$res){
+        die(mysqli_error($connect));
+    }
+}
+
+function managerOrders($connect, $fio) {
+
+    $query = "select * from orders  
+	inner join clients on orders.clientFio = clients.fio 
+    inner join goods on orders.idGoods = goods.id ";    // WHERE orders.clientFio=$fio  не работает подборка по имени
+
+    $result = mysqli_query($connect, $query);
+
+    if (!$result)
+        die(mysqli_error($connect));
+
+    $n = mysqli_num_rows($result);
+    $orders = array();
+
+    for ($i = 0; $i < $n; $i++) {
+        $row = mysqli_fetch_assoc($result);
+        $orders[] = $row;
+    }
+    return $orders;
+}
+
+function listOfOrders($connect){
+    $sql = "SELECT DISTINCT clientFio FROM orders";
+    $res = mysqli_query($connect, $sql);
+
+    if (!$res)
+        die(mysqli_error($connect));
+
+    $n = mysqli_num_rows($res);
+    $orders = array();
+
+    for ($i = 0; $i < $n; $i++) {
+        $row = mysqli_fetch_assoc($res);
+        $orders[] = $row;
+    }
+    return $orders;
+}

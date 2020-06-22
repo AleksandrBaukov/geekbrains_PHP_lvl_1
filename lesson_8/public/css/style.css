@@ -5,6 +5,7 @@ body {
     width: 1920px;
     margin: 0 auto;
 }
+
 .header {
     width: 100%;
     margin: 0;
@@ -254,6 +255,12 @@ input[type="search"]:focus {
     margin: 10px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+}
+.cart-item button{
+    position: absolute;
+    left: 22px;
+    bottom: 12px;
 }
 .product-bio{
     display: flex;
@@ -1605,9 +1612,16 @@ a {
 .admin-item{
     display: flex;
     margin: 20px;
+    border: 1px solid grey;
+    padding: 10px;
+}
+.admin-block{
+    display: flex;
+    flex-wrap: wrap;
 }
 .menu{
     display: flex;
+    justify-content: center;
 }
 .menu a{
     text-decoration: none;
@@ -1619,14 +1633,23 @@ a {
 .admin-btn span{
     margin: auto;
 }
+
 .content{
     padding: 30px;
 }
-
+.content td{
+    margin: 5px;
+}
 .order{
     min-height: 300px;
     padding: 30px;
     background-color: #fbfaf8;
+}
+.orders-list{
+    display: inline-block;
+}
+.orders-list a{
+    margin: 5px;
 }
 .test{
     color: white;

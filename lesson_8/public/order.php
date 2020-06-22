@@ -37,12 +37,15 @@
                     <a href="../admin/">For admin</a>
                 <?}?>
             </nav>
+            <?php
+            include_once "cart.php";
+            ?>
         </div>
     </header>
     <section class="order">
         <h1 class="order-title">Here you can complete your order</h1>
             <?php
-            include_once "../server/orderCore.php";
+            include_once "../server/order.php";
             ?>
     </section>
     <? include "templates/footer.php"?>
@@ -51,5 +54,6 @@
 <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
         integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
         crossorigin="anonymous"></script>
+<script src="js/app.js"></script>
 </body>
 </html>

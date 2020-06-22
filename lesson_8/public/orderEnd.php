@@ -5,7 +5,7 @@ session_start();?>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio/registration</title>
+    <title>Portfolio/reviews</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fonts/fonts.css">
     <link rel="SHORTCUT ICON" href="img/logos.png" type="image/png">
@@ -30,8 +30,8 @@ session_start();?>
                     echo "<a href='login.php?action=logout'>Log out</a><span class='test'>( ".$_SESSION['login']." )</span>";
                     echo "<a href='order.php'>Order</a>";
                 }else{
-                    echo "<a href='login.php'>Log in</a>";
-                    echo "<a href='registration.php' class=\"nav-active\">Registration</a>";
+                    echo "<a href='login.php' class=\"nav-active\">Log in</a>";
+                    echo "<a href='registration.php'>Registration</a>";
                 }
                 if(isset($_SESSION['login']) && isset($_SESSION['pass']) && $_SESSION['login'] == 'admin') {
                     ?>
@@ -39,27 +39,14 @@ session_start();?>
                 <?}?>
             </nav>
             <?php
-            include_once "cart.php";
+            //include_once "cart.php";
             ?>
         </div>
     </header>
-    <section class="registration">
-
-        <h1>Registration</h1>
-        <hr>
-        <?
-        if(isset($_SESSION['login']) && isset($_SESSION['pass'])){
-            echo "You are already log in";
-        }else{
-            echo $message?$message:"";?>
-            <form method="post">
-                <p>Логин: <input type="text" name="login" maxlength="30" placeholder="Введите Логин" autofocus required></p>
-                <p>Email: <input type="email" name="email" maxlength="30" placeholder="Введите Email" required></p>
-                <p>Пароль: <input type="password" minlength="2" name="pass" placeholder="Введите Пароль" required></p>
-                <input type="submit" name="submit" value="Зарегистрироваться">
-            </form>
-        <?}?>
+    <section>
+        <h1>Thanks for your order!</h1>
     </section>
+
     <? include "templates/companies.php"?>
     <? include "templates/information.php"?>
     <? include "templates/footer.php"?>
@@ -71,4 +58,3 @@ session_start();?>
 <script src="js/app.js"></script>
 </body>
 </html>
-

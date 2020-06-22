@@ -10,12 +10,14 @@ function addProduct(id) {
     $.ajax({
         type: 'POST',
         url: '../public/cart.php',
-        data: 'id='+id
+        data: 'id='+id,
+        success: function(data){
+            $('.product-quantity').html(data);
+        }
     });
 }
 
 function delProduct(id) {
-    alert("chto to ne tak")
     $.ajax({
         type: 'POST',
         url: '../public/cart.php',

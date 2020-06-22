@@ -70,6 +70,7 @@ session_start();
         <? include "templates/information.php"?>
         <? include "templates/footer.php"?>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
             integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
             crossorigin="anonymous"></script>
