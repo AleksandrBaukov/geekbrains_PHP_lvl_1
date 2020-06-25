@@ -5,7 +5,6 @@ if(isset($_GET['fio'])){
     $fio= $_GET['fio'];
 }
 $orders = managerOrders($connect, $fio);
-
 foreach ($orders as $order){?>
     <tr>
         <td><?= $order['idClient']?></td>
@@ -18,8 +17,4 @@ foreach ($orders as $order){?>
         <td><?= $order['comment']?></td>
         <td><?= $order['time']?></td>
     </tr>
-<?
-}?>
-
-
-
+<?}

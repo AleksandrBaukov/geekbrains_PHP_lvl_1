@@ -200,9 +200,8 @@ function deleteFromCart($connect, $id){
 
 function managerOrders($connect, $fio) {
 
-    $query = "select * from orders  
-	inner join clients on orders.clientFio = clients.fio 
-    inner join goods on orders.idGoods = goods.id ";    // WHERE orders.clientFio=$fio  не работает подборка по имени
+    $query = "select DISTINCT `idClient`,`fio`,`phone`,`email`,`address`,`pay`,`delivery`,`comment`, `time` from clients inner join orders on orders.clientFio = clients.fio
+                WHERE clients.fio='$fio'";    // WHERE orders.clientFio=$fio  не работает подборка по имени
 
     $result = mysqli_query($connect, $query);
 
@@ -217,6 +216,24 @@ function managerOrders($connect, $fio) {
         $orders[] = $row;
     }
     return $orders;
+}
+
+function managerGoods($connect, $fio){
+    $sql = "select * from orders inner join goods on orders.idGoods = goods.id
+            WHERE orders.clientFio='$fio'";
+    $res = mysqli_query($connect, $sql);
+
+    if (!$res)
+        die(mysqli_error($connect));
+
+    $n = mysqli_num_rows($res);
+    $goods = array();
+
+    for ($i = 0; $i < $n; $i++) {
+        $row = mysqli_fetch_assoc($res);
+        $goods[] = $row;
+    }
+    return $goods;
 }
 
 function listOfOrders($connect){

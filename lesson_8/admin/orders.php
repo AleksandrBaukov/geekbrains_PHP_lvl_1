@@ -18,24 +18,10 @@
         <div class="orders-list">
         <? $orders = listOfOrders($connect);
             foreach ($orders as $order){?>
-                <a href="clientOrder.php?fio=<?=$order['fio']?>" class="buy-btn"><?= $order['clientFio'];?></a>
+                <a href="clientOrder.php?fio=<?=$order['clientFio']?>" class="buy-btn"><?= $order['clientFio'];?></a>
             <?}
         ?>
         </div>
-<!--        <table>-->
-<!--            <tr><th>id клиента</th>-->
-<!--                <th>имя клиента</th>-->
-<!--                <th>телефон</th>-->
-<!--                <th>почта</th>-->
-<!--                <th>адрес</th>-->
-<!--                <th>способ оплаты</th>-->
-<!--                <th>способ доставки</th>-->
-<!--                <th>комментарий</th>-->
-<!--                <th>время заказа</th></tr>-->
-<!--            <tr><td>1</td></tr>-->
-<!--            <tr><td>2</td></tr>-->
-<!--            --><?// include_once "ordersCore.php"?>
-<!--        </table>-->
     </div>
 </div>
 </body>

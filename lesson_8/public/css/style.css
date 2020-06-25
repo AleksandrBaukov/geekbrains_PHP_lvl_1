@@ -1633,6 +1633,9 @@ a {
 .admin-btn span{
     margin: auto;
 }
+.manager-goods span{
+    margin: 5px;
+}
 
 .content{
     padding: 30px;
